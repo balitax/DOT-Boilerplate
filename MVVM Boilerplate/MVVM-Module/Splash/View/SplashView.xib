@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashView" customModule="MVVM_Boilerplate" customModuleProvider="target">
+            <connections>
+                <outlet property="progress" destination="zYa-u3-MNU" id="Qqh-hi-QoL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOT BOLIERPLATE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qd2-FR-1B2">
+                    <rect key="frame" x="100.5" y="332" width="174" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zYa-u3-MNU">
+                    <rect key="frame" x="137.5" y="386.5" width="100" height="2.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="afm-Se-IMO"/>
+                    </constraints>
+                    <color key="progressTintColor" red="0.94509803920000002" green="0.58823529409999997" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="trackTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </progressView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="qd2-FR-1B2" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="UDb-rS-2r4"/>
+                <constraint firstItem="zYa-u3-MNU" firstAttribute="centerX" secondItem="qd2-FR-1B2" secondAttribute="centerX" id="UK5-Jd-tPp"/>
+                <constraint firstItem="zYa-u3-MNU" firstAttribute="top" secondItem="qd2-FR-1B2" secondAttribute="bottom" constant="30" id="b0H-xs-fUj"/>
+                <constraint firstItem="qd2-FR-1B2" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="gXK-Oz-PXU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
