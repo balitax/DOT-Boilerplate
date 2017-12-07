@@ -34,6 +34,11 @@
 		B98B28F91FCD38B400154D20 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B98B28F71FCD38B400154D20 /* DetailTableViewCell.xib */; };
 		B98B28FB1FCD403F00154D20 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98B28FA1FCD403F00154D20 /* DetailViewModel.swift */; };
 		B98B28FD1FCD40B200154D20 /* DetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98B28FC1FCD40B200154D20 /* DetailService.swift */; };
+		B9F099391FD8E9F60063E197 /* GalleryUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F099371FD8E9F60063E197 /* GalleryUploadViewController.swift */; };
+		B9F0993A1FD8E9F60063E197 /* GalleryUploadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9F099381FD8E9F60063E197 /* GalleryUploadViewController.xib */; };
+		B9F0993C1FD8F0D40063E197 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0993B1FD8F0D40063E197 /* GalleryViewModel.swift */; };
+		B9F099401FD8F0EE0063E197 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F0993F1FD8F0EE0063E197 /* Gallery.swift */; };
+		B9F099421FD8F44B0063E197 /* GalleryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F099411FD8F44B0063E197 /* GalleryService.swift */; };
 		EE442500CD341A910A38B03C /* Pods_MVVM_BoilerplateTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DBB87578AF59A1991D3946A /* Pods_MVVM_BoilerplateTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +96,11 @@
 		B98B28F71FCD38B400154D20 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		B98B28FA1FCD403F00154D20 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B98B28FC1FCD40B200154D20 /* DetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailService.swift; sourceTree = "<group>"; };
+		B9F099371FD8E9F60063E197 /* GalleryUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryUploadViewController.swift; sourceTree = "<group>"; };
+		B9F099381FD8E9F60063E197 /* GalleryUploadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GalleryUploadViewController.xib; sourceTree = "<group>"; };
+		B9F0993B1FD8F0D40063E197 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		B9F0993F1FD8F0EE0063E197 /* Gallery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
+		B9F099411FD8F44B0063E197 /* GalleryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryService.swift; sourceTree = "<group>"; };
 		CDF63ED4830555F3C6D65F91 /* Pods-MVVM BoilerplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM BoilerplateTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM BoilerplateTests/Pods-MVVM BoilerplateTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC01EABF6A3AFBE1443FC181 /* Pods-MVVM BoilerplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM BoilerplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM BoilerplateUITests/Pods-MVVM BoilerplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E58B0962A5DB977995802113 /* Pods-MVVM Boilerplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM Boilerplate.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM Boilerplate/Pods-MVVM Boilerplate.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 		B95C226A1FCBEAE3007AE133 /* MVVM-Module */ = {
 			isa = PBXGroup;
 			children = (
+				B9F099321FD8E9A90063E197 /* Gallery */,
 				B95C228B1FCC09C8007AE133 /* Detail */,
 				B95C22731FCBF102007AE133 /* Home */,
 				B95C226B1FCBEAF3007AE133 /* Splash */,
@@ -355,6 +366,50 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		B9F099321FD8E9A90063E197 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				B9F099361FD8E9C50063E197 /* Service */,
+				B9F099351FD8E9C00063E197 /* Model */,
+				B9F099341FD8E9BA0063E197 /* View Model */,
+				B9F099331FD8E9B50063E197 /* View */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		B9F099331FD8E9B50063E197 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B9F099371FD8E9F60063E197 /* GalleryUploadViewController.swift */,
+				B9F099381FD8E9F60063E197 /* GalleryUploadViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B9F099341FD8E9BA0063E197 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				B9F0993B1FD8F0D40063E197 /* GalleryViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		B9F099351FD8E9C00063E197 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B9F0993F1FD8F0EE0063E197 /* Gallery.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B9F099361FD8E9C50063E197 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B9F099411FD8F44B0063E197 /* GalleryService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +530,7 @@
 				B98B28F51FCD387600154D20 /* DetailPostViewController.xib in Resources */,
 				B95C22701FCBEB07007AE133 /* SplashView.xib in Resources */,
 				B985E1B01FCBE9660060DCDB /* Assets.xcassets in Resources */,
+				B9F0993A1FD8E9F60063E197 /* GalleryUploadViewController.xib in Resources */,
 				B95C227E1FCBF16A007AE133 /* HomeTableViewCell.xib in Resources */,
 				B98B28F91FCD38B400154D20 /* DetailTableViewCell.xib in Resources */,
 				B95C227A1FCBF128007AE133 /* HomeViewController.xib in Resources */,
@@ -663,14 +719,18 @@
 				B95C22831FCBF462007AE133 /* APIService.swift in Sources */,
 				B95C228A1FCC0730007AE133 /* DOTBaseViewController.swift in Sources */,
 				B95C228E1FCC101A007AE133 /* APIManager.swift in Sources */,
+				B9F0993C1FD8F0D40063E197 /* GalleryViewModel.swift in Sources */,
 				B95C227D1FCBF16A007AE133 /* HomeTableViewCell.swift in Sources */,
 				B95C226F1FCBEB07007AE133 /* SplashView.swift in Sources */,
 				B95C22801FCBF386007AE133 /* Post.swift in Sources */,
 				B95C22721FCBEBE5007AE133 /* MVVMSetting.swift in Sources */,
+				B9F099421FD8F44B0063E197 /* GalleryService.swift in Sources */,
 				B95C22881FCBFD3D007AE133 /* PostService.swift in Sources */,
 				B95C22791FCBF128007AE133 /* HomeViewController.swift in Sources */,
 				B98B28F41FCD387600154D20 /* DetailPostViewController.swift in Sources */,
+				B9F099401FD8F0EE0063E197 /* Gallery.swift in Sources */,
 				B98B28FB1FCD403F00154D20 /* DetailViewModel.swift in Sources */,
+				B9F099391FD8E9F60063E197 /* GalleryUploadViewController.swift in Sources */,
 				B95C22911FCC1F29007AE133 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

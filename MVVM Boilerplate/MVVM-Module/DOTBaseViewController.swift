@@ -10,10 +10,11 @@ import UIKit
 
 class DOTBaseViewController: UIViewController, UIGestureRecognizerDelegate {
 
+    var picker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     
     /// PREVIOUS ICON
     func previousIcon() {
@@ -60,10 +61,21 @@ class DOTBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     /// - Parameters:
     ///   - sender: sender
     ///   - type: type of button system
-    func addSystemButtonNavbar(sender: Selector, type: UIBarButtonSystemItem) {
+    func addSystemButtonNavbarOnRight(sender: Selector, type: UIBarButtonSystemItem) {
         let button = UIBarButtonItem(barButtonSystemItem: type, target: self, action: sender)
         navigationItem.rightBarButtonItem = button
     }
+    
+    /// ADD SYSTEM BUTTON IN NAVBAR
+    ///
+    /// - Parameters:
+    ///   - sender: sender
+    ///   - type: type of button system
+    func addSystemButtonNavbarOnLeft(sender: Selector, type: UIBarButtonSystemItem) {
+        let button = UIBarButtonItem(barButtonSystemItem: type, target: self, action: sender)
+        navigationItem.leftBarButtonItem = button
+    }
+    
     
     
     /// PUSHING VIEWCONTROLLER
@@ -83,7 +95,53 @@ class DOTBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-
+    /// CHOOSE IMAGE FUNCTION
+    ///
+    /// - Parameter delegate: delegate image picker and navigation controller
+    func didChooseImage(_ delegate: (UIImagePickerControllerDelegate & UINavigationControllerDelegate)) {
+        let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let cameraAction = UIAlertAction(
+            title: "Camera", style: UIAlertActionStyle.default){ UIAlertAction in
+            self.openCamera()
+        }
+        let gallaryAction = UIAlertAction(
+            title: "Gallery",
+            style: UIAlertActionStyle.default){ UIAlertAction in
+            self.openGallary()
+        }
+        let cancelAction = UIAlertAction(
+            title: "Cancel",
+            style: UIAlertActionStyle.cancel) {UIAlertAction in
+                
+        }
+        
+        // Add the actions
+        picker.delegate = delegate
+        alert.addAction(cameraAction)
+        alert.addAction(gallaryAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    /// OPEN CAMERA FOR CHOOSE IMAGE
+    func openCamera() {
+        if(UIImagePickerController .isSourceTypeAvailable(
+            UIImagePickerControllerSourceType.camera)) {
+            picker.sourceType = UIImagePickerControllerSourceType.camera
+            self .present(picker, animated: true, completion: nil)
+        } else {
+            self.showAlert("You haven't a camera!")
+        }
+    }
+    
+    
+    
+    /// OPEN GALLERY FOR CHOOSE IMAGE
+    func openGallary()  {
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        self.present(picker, animated: true, completion: nil)
+    }
+    
 }
 
 extension String {

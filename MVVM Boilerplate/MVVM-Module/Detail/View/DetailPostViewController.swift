@@ -29,7 +29,7 @@ class DetailPostViewController: DOTBaseViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.register(DetailTableViewCell.register(), forCellReuseIdentifier: "detail")
         
-        addSystemButtonNavbar(sender: #selector(self.didBookmarkPost(_:)), type: UIBarButtonSystemItem.bookmarks)
+        addSystemButtonNavbarOnRight(sender: #selector(self.didBookmarkPost(_:)), type: UIBarButtonSystemItem.bookmarks)
         initVM()
         
     }
@@ -57,17 +57,8 @@ class DetailPostViewController: DOTBaseViewController {
         
         self.detailViewModel.updateLoadingStatus = { [weak self]() in
             let isLoading = self?.detailViewModel.isLoading ?? false
-            if isLoading {
-                self?.indicator.startAnimating()
-                UIView.animate(withDuration: 0.2, animations: {
-                    self?.tableView.alpha = 0.0
-                })
-            } else {
-                self?.indicator.stopAnimating()
-                UIView.animate(withDuration: 0.2, animations: {
-                    self?.tableView.alpha = 1.0
-                })
-            }
+            
+            
         }
         
         self.detailViewModel.reloadTableViewClosure = { [weak self]() in

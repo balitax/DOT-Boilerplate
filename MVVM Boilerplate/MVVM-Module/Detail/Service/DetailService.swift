@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Foundation
 import Alamofire
 import ObjectMapper
 
@@ -22,7 +21,7 @@ class DetailPostService: DetailPostServiceProtocol {
     /// - Parameter complete: array data
     func fetchDetailPost(id: Int, complete: @escaping (Post?, APIError?) -> ()) {
         let url = APIService.baseURL + "posts/\(id)"
-        APIManager.fetch(
+        APIManager.didFetch(
             url: url,
             method: .get) { (response, success) in
                 if success == true {

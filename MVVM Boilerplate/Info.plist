@@ -37,6 +37,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We need permission to access your camera</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>We need permission to access your media library</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -24,7 +24,7 @@ class PostService: PostServiceProtocol {
     func fetchPost(complete: @escaping ([Post]?, APIError?) -> ()) {
         
         let url = APIService.baseURL + "posts"
-        APIManager.fetch(
+        APIManager.didFetch(
             url: url,
             method: .get) { (response, success) in
                 

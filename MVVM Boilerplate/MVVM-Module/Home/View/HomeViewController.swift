@@ -26,11 +26,15 @@ class HomeViewController: DOTBaseViewController {
         self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        addSystemButtonNavbar(sender: #selector(self.initViewModel), type: UIBarButtonSystemItem.refresh)
+        addSystemButtonNavbarOnRight(sender: #selector(self.initViewModel), type: UIBarButtonSystemItem.refresh)
+        addSystemButtonNavbarOnLeft(sender: #selector(self.uploadGallery), type: UIBarButtonSystemItem.add)
         initViewModel()
         
     }
     
+    @objc func uploadGallery() {
+        self.pushNavigation(GalleryUploadViewController())
+    }
     
     @objc func initViewModel() {
         self.postViewModel.showAlertClosure = { [weak self]() in

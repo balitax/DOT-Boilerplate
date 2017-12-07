@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GalleryUploadViewController" customModule="MVVM_Boilerplate" customModuleProvider="target">
+            <connections>
+                <outlet property="detailofGallery" destination="rcY-n4-V8G" id="X9r-lo-ylS"/>
+                <outlet property="imageToDisplay" destination="kY9-NA-fLs" id="p4h-5J-0u0"/>
+                <outlet property="indicatorLoading" destination="c6d-sE-ur9" id="JaL-Mg-EZZ"/>
+                <outlet property="titleofGallery" destination="bBq-Ds-iSu" id="D1b-4f-8Hn"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title of Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rt-nF-oI3">
+                    <rect key="frame" x="18" y="38" width="99.5" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title of gallery" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bBq-Ds-iSu">
+                    <rect key="frame" x="18" y="74" width="339" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="VQo-wz-jMu"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description of Gallery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmy-mX-Tas">
+                    <rect key="frame" x="18" y="127" width="339" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description of gallery" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcY-n4-V8G">
+                    <rect key="frame" x="18" y="163" width="339" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="Ujc-XO-SX6"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aR8-Gy-8TD">
+                    <rect key="frame" x="18" y="216" width="120" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="ukL-aq-hfi"/>
+                    </constraints>
+                    <state key="normal" title="Choose Image">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didChooseGallery:" destination="-1" eventType="touchUpInside" id="NkW-aj-HuD"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kY9-NA-fLs">
+                    <rect key="frame" x="18" y="264" width="339" height="150"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="BNj-Zd-vUU"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iER-ZA-6Xf">
+                    <rect key="frame" x="18" y="429" width="339" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="3C7-xv-Gcf"/>
+                    </constraints>
+                    <state key="normal" title="Save Gallery">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="didSaveGallery:" destination="-1" eventType="touchUpInside" id="eGF-iy-tUY"/>
+                    </connections>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="c6d-sE-ur9">
+                    <rect key="frame" x="177" y="482" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="kY9-NA-fLs" firstAttribute="trailing" secondItem="rcY-n4-V8G" secondAttribute="trailing" id="1wc-hG-N9R"/>
+                <constraint firstItem="iER-ZA-6Xf" firstAttribute="leading" secondItem="kY9-NA-fLs" secondAttribute="leading" id="1xc-f6-sZj"/>
+                <constraint firstItem="Lmy-mX-Tas" firstAttribute="leading" secondItem="bBq-Ds-iSu" secondAttribute="leading" id="4SL-x0-Cxg"/>
+                <constraint firstItem="kY9-NA-fLs" firstAttribute="top" secondItem="aR8-Gy-8TD" secondAttribute="bottom" constant="18" id="4XW-5f-bBh"/>
+                <constraint firstItem="iER-ZA-6Xf" firstAttribute="trailing" secondItem="kY9-NA-fLs" secondAttribute="trailing" id="6aq-cC-rDM"/>
+                <constraint firstItem="c6d-sE-ur9" firstAttribute="centerX" secondItem="iER-ZA-6Xf" secondAttribute="centerX" id="8Au-Dj-MfH"/>
+                <constraint firstItem="0Rt-nF-oI3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="18" id="ANs-oD-Gt5"/>
+                <constraint firstItem="rcY-n4-V8G" firstAttribute="trailing" secondItem="Lmy-mX-Tas" secondAttribute="trailing" id="Chr-WC-6Bm"/>
+                <constraint firstItem="Lmy-mX-Tas" firstAttribute="top" secondItem="bBq-Ds-iSu" secondAttribute="bottom" constant="18" id="EMU-xA-ADU"/>
+                <constraint firstItem="c6d-sE-ur9" firstAttribute="top" secondItem="iER-ZA-6Xf" secondAttribute="bottom" constant="18" id="Frw-b4-Egs"/>
+                <constraint firstItem="iER-ZA-6Xf" firstAttribute="top" secondItem="kY9-NA-fLs" secondAttribute="bottom" constant="15" id="Mv7-UX-gxv"/>
+                <constraint firstItem="rcY-n4-V8G" firstAttribute="leading" secondItem="Lmy-mX-Tas" secondAttribute="leading" id="RqT-Xy-q8c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bBq-Ds-iSu" secondAttribute="trailing" constant="18" id="XHF-GB-skA"/>
+                <constraint firstItem="bBq-Ds-iSu" firstAttribute="leading" secondItem="0Rt-nF-oI3" secondAttribute="leading" id="a8o-KV-eBG"/>
+                <constraint firstItem="rcY-n4-V8G" firstAttribute="top" secondItem="Lmy-mX-Tas" secondAttribute="bottom" constant="18" id="dHD-B2-ji8"/>
+                <constraint firstItem="aR8-Gy-8TD" firstAttribute="leading" secondItem="rcY-n4-V8G" secondAttribute="leading" id="gkJ-yy-h97"/>
+                <constraint firstItem="bBq-Ds-iSu" firstAttribute="top" secondItem="0Rt-nF-oI3" secondAttribute="bottom" constant="18" id="jag-OF-UuX"/>
+                <constraint firstItem="Lmy-mX-Tas" firstAttribute="trailing" secondItem="bBq-Ds-iSu" secondAttribute="trailing" id="lqB-rg-QUV"/>
+                <constraint firstItem="kY9-NA-fLs" firstAttribute="leading" secondItem="aR8-Gy-8TD" secondAttribute="leading" id="mdz-8j-AXT"/>
+                <constraint firstItem="aR8-Gy-8TD" firstAttribute="top" secondItem="rcY-n4-V8G" secondAttribute="bottom" constant="18" id="sPa-7h-R4o"/>
+                <constraint firstItem="0Rt-nF-oI3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="vwi-G0-ojP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="34.5" y="53.5"/>
+        </view>
+    </objects>
+</document>
