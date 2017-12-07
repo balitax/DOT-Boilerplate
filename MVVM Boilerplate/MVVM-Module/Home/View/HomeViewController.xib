@@ -33,11 +33,21 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="43b-Kr-DRz">
                     <rect key="frame" x="177.5" y="333.5" width="20" height="20"/>
                 </activityIndicatorView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pC-wh-DXa">
+                    <rect key="frame" x="307" y="599" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="YTI-bx-UAL"/>
+                        <constraint firstAttribute="height" constant="50" id="nGs-zM-6mq"/>
+                    </constraints>
+                    <state key="normal" image="like_icon_hov"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5pC-wh-DXa" secondAttribute="bottom" constant="18" id="2DJ-cZ-FPi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lFj-uv-cc7" secondAttribute="bottom" id="IYY-HE-Nka"/>
                 <constraint firstItem="lFj-uv-cc7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QDg-Oz-9mC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5pC-wh-DXa" secondAttribute="trailing" constant="18" id="R4f-Mt-bqJ"/>
                 <constraint firstItem="43b-Kr-DRz" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="ZUQ-G3-ftg"/>
                 <constraint firstItem="43b-Kr-DRz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="cro-No-j0r"/>
                 <constraint firstAttribute="trailing" secondItem="lFj-uv-cc7" secondAttribute="trailing" id="lra-r0-Oua"/>
@@ -47,4 +57,7 @@
             <point key="canvasLocation" x="39.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="like_icon_hov" width="54" height="54"/>
+    </resources>
 </document>

@@ -57,8 +57,11 @@ class DetailPostViewController: DOTBaseViewController {
         
         self.detailViewModel.updateLoadingStatus = { [weak self]() in
             let isLoading = self?.detailViewModel.isLoading ?? false
-            
-            
+            if isLoading {
+                self?.indicator.startAnimating()
+            } else {
+                self?.indicator.stopAnimating()
+            }
         }
         
         self.detailViewModel.reloadTableViewClosure = { [weak self]() in

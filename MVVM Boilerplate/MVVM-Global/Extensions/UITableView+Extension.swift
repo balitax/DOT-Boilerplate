@@ -70,4 +70,5 @@ extension UITableView {
             delayCounter += 1
         }
     }
+    
 }

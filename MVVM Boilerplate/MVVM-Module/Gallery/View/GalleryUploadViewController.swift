@@ -16,6 +16,7 @@ class GalleryUploadViewController: DOTBaseViewController {
     @IBOutlet weak var indicatorLoading: UIActivityIndicatorView!
     
     var imageSelected = #imageLiteral(resourceName: "cover")
+    var images = [#imageLiteral(resourceName: "cover"), #imageLiteral(resourceName: "cover")]
     
     lazy var galleryViewModel: GalleryViewModel = {
         return GalleryViewModel()
@@ -67,8 +68,7 @@ class GalleryUploadViewController: DOTBaseViewController {
         } else if descriptionGallery.isEmpty {
             self.showAlert("Please input description of gallery")
         } else {
-            print("GAMBARE: \(self.imageSelected)")
-            self.galleryViewModel.uploadGallery(titleGallery, description: descriptionGallery, image: [self.imageSelected])
+            self.galleryViewModel.uploadGallery(titleGallery, description: descriptionGallery, image:images)
         }
         
     }

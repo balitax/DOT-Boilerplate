@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 class HomeViewController: DOTBaseViewController {
     
@@ -16,6 +17,13 @@ class HomeViewController: DOTBaseViewController {
     lazy var postViewModel: PostViewModel = {
         return PostViewModel()
     }()
+    
+    private let refreshControl = UIRefreshControl()
+    
+    deinit {
+        self.tableView.es.stopLoadingMore()
+        self.tableView.es.stopPullToRefresh()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +34,16 @@ class HomeViewController: DOTBaseViewController {
         self.tableView.estimatedRowHeight = 60
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        addSystemButtonNavbarOnRight(sender: #selector(self.initViewModel), type: UIBarButtonSystemItem.refresh)
         addSystemButtonNavbarOnLeft(sender: #selector(self.uploadGallery), type: UIBarButtonSystemItem.add)
         initViewModel()
-        
+        initRefreshControll()
+    }
+    
+    fileprivate func initRefreshControll() {
+        self.tableView.es.addPullToRefresh {
+            self.initViewModel()
+            self.tableView.es.stopPullToRefresh()
+        }
     }
     
     @objc func uploadGallery() {
@@ -49,21 +63,16 @@ class HomeViewController: DOTBaseViewController {
             let isLoading = self?.postViewModel.isLoading ?? false
             if isLoading {
                 self?.indicators.startAnimating()
-                UIView.animate(withDuration: 0.2, animations: {
-                    self?.tableView.alpha = 0.0
-                })
             } else {
                 self?.indicators.stopAnimating()
-                UIView.animate(withDuration: 0.2, animations: {
-                    self?.tableView.alpha = 1.0
-                })
             }
         }
         
         self.postViewModel.reloadTableViewClosure = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData(effect: UITableView.EffectEnum.roll)
-            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                self?.refreshControl.endRefreshing()
+                self?.tableView.reloadData()
+            })
         }
         
         self.postViewModel.initFetch()

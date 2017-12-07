@@ -16,10 +16,10 @@ struct MVVMSetting {
     /// Init Root ViewController
     ///
     /// - Parameter window: UIWindow
-    static func initRoot() -> UIWindow {
+    static func initRoot(_ viewController: UIViewController) -> UIWindow {
         var window = UIWindow()
         window = UIWindow(frame: UIScreen.main.bounds)
-        let initialViewController = SplashView(nibName: "SplashView", bundle: nil)
+        let initialViewController = viewController
 
         let frame = UIScreen.main.bounds
         window = UIWindow(frame: frame)

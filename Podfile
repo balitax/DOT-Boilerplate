@@ -9,6 +9,9 @@ target 'MVVM Boilerplate' do
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'ObjectMapper'
+  
+  #Appereances
+  pod 'ESPullToRefresh' 
 
   target 'MVVM BoilerplateTests' do
     inherit! :search_paths

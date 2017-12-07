@@ -23,15 +23,11 @@ class GalleryService: GalleryServiceProtocol {
         ]
         
         let headers = [
-//            "test": "",
-            "Authorization": "Client-ID ec0dafcf7a9a9ae",
-//            "Authorization": "Bearer 1d8532e346dc71705d89009340062dd234d7f707"
+            "Authorization": "Client-ID ec0dafcf7a9a9ae"
         ]
         
         let urlAPI = "https://api.imgur.com/3/image"
         APIManager.didUpload(url: urlAPI, method: .post, parameters: parameters, imageParameters: images, headers: headers) { (response, success) in
-            
-            print("UPLOAD: \(response)")
             
             if success == true {
                 if let responseJson = response {

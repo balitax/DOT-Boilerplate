@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Root Controller
-        self.window =  MVVMSetting.initRoot()
+        let rootView = SplashView(nibName: "SplashView", bundle: nil)
+        self.window =  MVVMSetting.initRoot(rootView)
         
         
         return true
